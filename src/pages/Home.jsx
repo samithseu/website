@@ -4,7 +4,7 @@ function Home() {
       <div className="hero-container container">
         {/* image */}
         <div className="hero-img">
-          <img src="logo.jpg" alt="samithseu logo" />
+          <img src="logo.webp" alt="samithseu logo" />
         </div>
 
         {/* name */}
