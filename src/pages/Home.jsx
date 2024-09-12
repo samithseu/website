@@ -8,7 +8,6 @@ function Home() {
         </div>
 
         {/* name */}
-        <h1>samith seu</h1>
         <h2>web developer</h2>
         <h2 className="highlight">frontend</h2>
 
