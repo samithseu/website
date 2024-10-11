@@ -90,7 +90,6 @@ video {
   width: 40px;
   border-radius: 50%;
   background-color: var(--blue);
-  /* filter: blur(275px) saturate(100%); */
   transform: translate(-50%, -50%);
   opacity: 15%;
   aspect-ratio: 1/1;
@@ -318,5 +317,12 @@ video {
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+/* remove cursor effect in small screen */
+@media screen and (max-width: 768px) {
+  .shape {
+    display: none;
   }
 }

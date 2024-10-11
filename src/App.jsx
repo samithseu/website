@@ -15,10 +15,11 @@ function App() {
       setPosition({ x: e.clientX, y: e.clientY });
     };
     let shape = document.querySelector(".shape");
-    shape.style.left = `${position.x}px`;
-    shape.style.top = `${position.y}px`;
-
-    document.addEventListener("mousemove", updatePosition);
+    if (shape.style.display != "none") {
+      shape.style.left = `${position.x}px`;
+      shape.style.top = `${position.y}px`;
+      document.addEventListener("mousemove", updatePosition);
+    }
     return () => {
       document.removeEventListener("mousemove", updatePosition);
     };
