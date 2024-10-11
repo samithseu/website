@@ -261,6 +261,17 @@ video {
       color: var(--white);
       transition: 200ms ease-out;
 
+      & svg {
+        aspect-ratio: initial;
+        height: 1.6rem;
+        fill: white;
+        transition: 200ms ease-out;
+
+        &:hover {
+          fill: var(--blue);
+        }
+      }
+
       &:hover {
         color: var(--blue);
       }
