@@ -237,8 +237,8 @@ video {
       inset: -1rem;
       background-color: var(--blue);
       border-radius: 50%;
-      opacity: 35%;
-      filter: blur(5rem);
+      opacity: 15%;
+      filter: blur(3.2rem);
     }
 
     & img {
