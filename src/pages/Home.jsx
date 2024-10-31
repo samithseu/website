@@ -3,22 +3,54 @@ import Linkedin from "../components/LinkedIn";
 import Twitter from "../components/Twitter";
 import Telegram from "../components/Telegram";
 import Email from "../components/Email";
+import { motion } from "framer-motion";
 
 function Home() {
+  const transition = { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] };
+  const variants = {
+    hidden: { filter: "blur(12px)", transform: "translateY(30%)", opacity: 0 },
+    visible: { filter: "blur(0)", transform: "translateY(0)", opacity: 1 },
+  };
+
   return (
     <>
-      <div className="hero-container container">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        transition={{ staggerChildren: 0.04 }}
+        className="hero-container container"
+      >
         {/* image */}
-        <div className="hero-img">
+        <motion.div
+          transition={transition}
+          variants={variants}
+          className="hero-img"
+        >
           <img src="logo.webp" alt="samithseu logo" />
-        </div>
+        </motion.div>
 
         {/* name */}
-        <h2>web developer</h2>
-        <h2 className="highlight">frontend</h2>
+        <motion.h2
+          transition={transition}
+          variants={variants}
+          className="subtext"
+        >
+          web developer
+        </motion.h2>
+        <motion.h2
+          transition={transition}
+          variants={variants}
+          className="subtext highlight"
+        >
+          frontend
+        </motion.h2>
 
         {/* social */}
-        <div className="social">
+        <motion.div
+          transition={transition}
+          variants={variants}
+          className="social"
+        >
           <a
             target="_blank"
             href="https://github.com/samithseu"
@@ -53,8 +85,8 @@ function Home() {
           >
             <Email />
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </>
   );
 }

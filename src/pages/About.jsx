@@ -1,9 +1,11 @@
+import AnimatedPage from "../components/AnimatedPage";
+
 const About = () => {
   let todayYear = new Date().getFullYear();
 
   return (
     <>
-      <div className="about-container container">
+      <AnimatedPage className="about-container container">
         <h1 className="section-title">about</h1>
         <p>
           As you already know, my name is{" "}
@@ -26,7 +28,7 @@ const About = () => {
           practise more since 2020 because the quarantine make me want to learn
           more about the computer.
         </p>
-      </div>
+      </AnimatedPage>
     </>
   );
 };
