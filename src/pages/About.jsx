@@ -1,17 +1,22 @@
 import AnimatedPage from "../components/AnimatedPage";
+import AboutIcon from "../components/AboutIcon";
 
 const About = () => {
-  let todayYear = new Date().getFullYear();
+  let today = new Date();
+  let birthday = new Date(2002, 6, 14);
+  let age = today.getFullYear() - birthday.getFullYear();
 
   return (
     <>
       <AnimatedPage className="about-container container">
-        <h1 className="section-title">about</h1>
+        <h1 className="section-title">
+          about
+          <AboutIcon />
+        </h1>
         <p>
-          As you already know, my name is{" "}
-          <span className="highlight">Samith Seu </span>. I am{" "}
-          <span className="highlight">{todayYear - 2002}</span> years old and a
-          student studying in IT major at{" "}
+          My name is <span className="highlight">Samith Seu </span>, a{" "}
+          <span className="highlight">{age}</span> year-old IT student, studying
+          in IT major at{" "}
           <a
             target="_blank"
             href="https://www.facebook.com/brachnasastraBTI"
@@ -26,7 +31,23 @@ const About = () => {
           </span>{" "}
           year. Even coding is hard for me, I'm still trying to learn and
           practise more since 2020 because the quarantine make me want to learn
-          more about the computer.
+          more about the computer. As a passionate frontend developer, I thrive
+          on crafting intuitive and visually compelling user experiences. With a
+          strong <span className="highlight"> foundation</span> in modern web
+          technologies like <span className="highlight">HTML, CSS</span> and{" "}
+          <span className="highlight">JavaScript</span>, I specialize in
+          leveraging frameworks like <span className="highlight">Vue.js </span>{" "}
+          and <span className="highlight"> React</span> to build responsive,
+          user-friendly interfaces. My commitment to clean, maintainable code
+          ensures that every project is not just visually appealing but also
+          highly functional and optimized for{" "}
+          <span className="highlight"> performance</span>. Whether collaborating
+          with teams or working independently, I bring a detail-oriented
+          approach and a creative mindset to every project, aiming to bridge the
+          gap between design and functionality. I’m dedicated to staying ahead
+          of industry trends, constantly learning, and using my skills to turn
+          <span className="highlight"> innovative</span> ideas into digital
+          reality.
         </p>
       </AnimatedPage>
     </>

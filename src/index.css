@@ -74,10 +74,18 @@ video {
 .section-title {
   font-size: 1.4rem;
   text-transform: capitalize;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
   font-weight: bold;
   color: var(--blue);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  & svg {
+    height: 1.5rem;
+    fill: var(--blue);
+  }
 }
 .section-text {
   font-size: 1rem;
@@ -101,6 +109,7 @@ video {
 .header-container {
   width: 100%;
   height: max-content;
+  backdrop-filter: blur(10px) brightness(0.5);
 }
 
 .header-container {
@@ -306,8 +315,9 @@ video {
 .about-container {
   & p {
     text-indent: 5rem;
+    font-weight: normal;
     text-align: justify;
-    line-height: 1.8;
+    line-height: 2;
     color: var(--white);
   }
 
