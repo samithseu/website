@@ -54,6 +54,14 @@ video {
 }
 
 /* util */
+/* @starting-style {
+  .nav-link-mobile {
+    transform: translateX(100%);
+    filter: blur(10px);
+    opacity: 0;
+  }
+} */
+
 .container {
   max-width: 56rem;
   margin-inline: auto;
@@ -102,7 +110,7 @@ video {
   opacity: 15%;
   aspect-ratio: 1/1;
   pointer-events: none;
-  z-index: 99;
+  z-index: 999;
 }
 /* HEADER STYLING */
 
@@ -141,13 +149,13 @@ video {
     display: none;
   }
 
-  & .nav-link-mobile {
+  & ul.nav-link-mobile {
     --padding-top: 2.5rem;
     position: absolute;
-    width: 10rem;
-    height: max-content;
     top: calc(1.9rem + var(--padding-top));
     right: calc(0% + 1.5rem);
+    width: 10rem;
+    height: max-content;
     border-radius: 0.5rem;
     background-color: var(--black);
     border: 1px solid var(--white-low);
@@ -156,7 +164,6 @@ video {
     display: flex;
     flex-direction: column;
     align-items: start;
-    transition: 400ms ease-out;
     gap: 1rem;
 
     & a {
@@ -232,10 +239,9 @@ video {
   justify-content: center;
 
   & .hero-img {
-    width: 11rem;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    margin-bottom: 2rem;
+    width: 7rem;
+    aspect-ratio: initial;
+    margin-bottom: 4rem;
     position: relative;
     pointer-events: none;
     user-select: none;
@@ -246,11 +252,12 @@ video {
       inset: -1rem;
       background-color: var(--blue);
       border-radius: 50%;
-      opacity: 15%;
-      filter: blur(3.2rem);
+      opacity: 24%;
+      filter: blur(3.5rem);
     }
 
-    & img {
+    & img,
+    svg {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -297,10 +304,6 @@ video {
   }
 
   @media screen and (min-width: 768px) {
-    & .hero-img {
-      width: 12.5rem;
-    }
-
     & h1 {
       margin-bottom: 1rem;
     }

@@ -3,6 +3,14 @@ import { Link, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 
 const Header = () => {
+  // links
+  const links = [
+    { id: 1, name: "home", slug: "" },
+    { id: 2, name: "about", slug: "about" },
+    { id: 3, name: "blog", slug: "blog" },
+    { id: 4, name: "projects", slug: "projects" },
+  ];
+
   const [menuClass, setMenuClass] = useState(false);
   const location = useLocation();
 
@@ -32,7 +40,7 @@ const Header = () => {
             samithseu
           </Link>
           {/* nav-links */}
-          <Navbar cName={"nav-link"} />
+          <Navbar forMobile={menuClass} cName={"nav-link"} />
           {/* burger menu */}
           <div onClick={handleClickMenu} className="burger-menu">
             <span></span>
@@ -40,7 +48,9 @@ const Header = () => {
             <span></span>
           </div>
           {/* nav-links for mobile*/}
-          {menuClass && <Navbar cName={"nav-link-mobile"} />}
+          {menuClass && (
+            <Navbar forMobile={menuClass} cName={"nav-link-mobile"} />
+          )}
         </nav>
       </header>
     </>

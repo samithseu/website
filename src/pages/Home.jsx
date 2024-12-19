@@ -4,6 +4,7 @@ import Twitter from "../components/Twitter";
 import Telegram from "../components/Telegram";
 import Email from "../components/Email";
 import { motion } from "framer-motion";
+import M_Logo from "../components/M_Logo";
 
 function Home() {
   const transition = { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] };
@@ -26,7 +27,7 @@ function Home() {
           variants={variants}
           className="hero-img"
         >
-          <img src="logo.webp" alt="samithseu logo" />
+          <M_Logo color="#15d0ff" />
         </motion.div>
 
         {/* name */}
