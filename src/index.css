@@ -53,14 +53,15 @@ video {
   max-width: 100%;
 }
 
-/* util */
-/* @starting-style {
-  .nav-link-mobile {
-    transform: translateX(100%);
-    filter: blur(10px);
-    opacity: 0;
-  }
-} */
+/* To the left */
+.hoverText:has(+ .hoverText:hover) {
+  font-weight: 500;
+  color: rgb(199, 210, 254);
+}
+
+.hoverText:has(+ .hoverText + .hoverText:hover) {
+  font-weight: 300;
+}
 
 .container {
   max-width: 56rem;
