@@ -43,7 +43,7 @@ html {
 }
 body {
   min-height: 100dvh;
-  background-color: var(--black);
+  background-image: url("./assets/grid.svg");
 }
 img,
 picture,
@@ -79,6 +79,9 @@ video {
   font-weight: 600;
   text-transform: capitalize;
   user-select: none;
+  &.active {
+    color: var(--blue) !important;
+  }
 }
 .section-title {
   font-size: 1.4rem;
@@ -118,7 +121,7 @@ video {
 .header-container {
   width: 100%;
   height: max-content;
-  backdrop-filter: blur(10px) brightness(0.5);
+  backdrop-filter: blur(10px);
 }
 
 .header-container {
@@ -153,12 +156,13 @@ video {
   & ul.nav-link-mobile {
     --padding-top: 2.5rem;
     position: absolute;
-    top: calc(1.9rem + var(--padding-top));
+    top: calc(2rem + var(--padding-top));
     right: calc(0% + 1.5rem);
     width: 10rem;
     height: max-content;
     border-radius: 0.5rem;
     background-color: var(--black);
+    backdrop-filter: blur(10px) brightness(1);
     border: 1px solid var(--white-low);
     padding: 1rem;
     list-style: none;
@@ -174,6 +178,9 @@ video {
       transition: 200ms ease-out;
 
       &:hover {
+        color: var(--blue);
+      }
+      &.active {
         color: var(--blue);
       }
     }
@@ -203,6 +210,7 @@ video {
   }
   /* medium screen */
   @media screen and (min-width: 768px) {
+    backdrop-filter: blur(0px) brightness(1);
     & .nav-link-mobile {
       display: none;
     }
