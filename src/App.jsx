@@ -4,30 +4,35 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Projects from "./pages/Projects";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { motion, useMotionValue } from "framer-motion";
 
 function App() {
-  // making a blurred shape following the cursor!
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
   useEffect(() => {
-    const updatePosition = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+    const handleMouseMove = (event) => {
+      mouseX.set(event.clientX);
+      mouseY.set(event.clientY);
     };
-    let shape = document.querySelector(".shape");
-    if (shape.style.display != "none") {
-      shape.style.left = `${position.x}px`;
-      shape.style.top = `${position.y}px`;
-      document.addEventListener("mousemove", updatePosition);
-    }
+
+    // Add event listener for mouse movement
+    window.addEventListener("mousemove", handleMouseMove);
+
     return () => {
-      document.removeEventListener("mousemove", updatePosition);
+      // Cleanup the event listener on unmount
+      window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [position]);
+  }, [mouseX, mouseY]);
 
   return (
     <>
-      <div className="shape"></div>
+      <motion.div
+        className="shape"
+        style={{ x: mouseX, y: mouseY, translate: "-50% -50%" }}
+        transition={{ type: "smooth" }}
+      ></motion.div>
       <Header />
       <main>
         <Routes>

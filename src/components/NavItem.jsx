@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-const NavItem = ({ content, activePath }) => {
+const NavItem = ({ content }) => {
   return (
     <li>
       <Link
-        className={"nav-item" + (activePath === content.slug ? " active" : "")}
+        className={`nav-item ${
+          useLocation().pathname.substring(1) === content.slug ? "active" : ""
+        } `}
         to={`/${content.slug}`}
       >
         {content.name}

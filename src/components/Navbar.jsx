@@ -1,11 +1,7 @@
 import NavItem from "./NavItem";
 import { AnimatePresence, motion } from "framer-motion";
-import { useLocation } from "react-router-dom";
 
 const Navbar = ({ cName, forMobile }) => {
-  const { pathname } = useLocation();
-  const activePath = pathname.split("/")[1];
-
   // links
   const links = [
     { id: 1, name: "home", slug: "" },
@@ -30,7 +26,7 @@ const Navbar = ({ cName, forMobile }) => {
         className={cName}
       >
         {links.map((item) => (
-          <NavItem key={item.id} content={item} activePath={activePath} />
+          <NavItem key={item.id} content={item} />
         ))}
       </motion.ul>
     </AnimatePresence>
