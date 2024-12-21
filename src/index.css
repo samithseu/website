@@ -21,6 +21,7 @@
   background-color: var(--blue);
   color: var(--black);
 }
+
 *,
 ::after,
 ::before {
@@ -43,7 +44,7 @@ h6 {
 html {
   font-size: 16px;
   font-family: "Inter", sans-serif;
-  color-scheme: dark;
+  color-scheme: only dark;
 }
 body {
   min-height: 100dvh;
@@ -78,6 +79,7 @@ video {
 }
 .highlight {
   color: var(--blue);
+  text-decoration: none;
 }
 .nav-item {
   font-weight: 600;
@@ -213,7 +215,6 @@ video {
   }
   /* medium screen */
   @media screen and (min-width: 768px) {
-    backdrop-filter: blur(0px) brightness(1);
     & .nav-link-mobile {
       display: none;
     }
@@ -349,5 +350,59 @@ video {
 @media screen and (max-width: 768px) {
   .shape {
     display: none;
+  }
+}
+
+/* PROJECTS STYLING */
+.projects {
+  width: 100%;
+  height: max-content;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
+
+  & .loading {
+    color: var(--blue);
+  }
+}
+
+.project-card {
+  text-align: center;
+  width: 100%;
+  height: max-content;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid var(--blue);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  background-color: transparent;
+  transition: all 350ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  & svg {
+    aspect-ratio: initial;
+    fill: var(--blue);
+    height: 1.5rem;
+  }
+
+  & .project-title {
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    color: var(--blue);
+  }
+
+  &:hover {
+    scale: 0.98;
+    background-color: var(--blue);
+  }
+  &:hover .project-title {
+    color: var(--black);
+  }
+  &:hover svg {
+    fill: var(--black);
   }
 }

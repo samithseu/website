@@ -36,13 +36,14 @@ const About = () => {
           strong <span className="highlight"> foundation</span> in modern web
           technologies like <span className="highlight">HTML, CSS</span> and{" "}
           <span className="highlight">JavaScript</span>, I specialize in
-          leveraging frameworks like <span className="highlight">Vue.js </span>{" "}
-          and <span className="highlight"> React</span> to build responsive,
+          leveraging frameworks like <span className="highlight">Vue.JS </span>{" "}
+          and <span className="highlight"> React.JS</span> to build responsive,
           user-friendly interfaces. My commitment to clean, maintainable code
           ensures that every project is not just visually appealing but also
           highly functional and optimized for{" "}
           <span className="highlight"> performance</span>. Whether collaborating
-          with teams or working independently, I bring a detail-oriented
+          with teams or working independently, I bring a{" "}
+          <span className="highlight">detail-oriented </span>
           approach and a creative mindset to every project, aiming to bridge the
           gap between design and functionality. I’m dedicated to staying ahead
           of industry trends, constantly learning, and using my skills to turn
