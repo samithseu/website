@@ -11,7 +11,10 @@ const Projects = () => {
     fetch("https://api.github.com/users/samithseu/repos")
       .then((response) => response.json())
       .then((data) => {
-        let filteredData = data.filter((project) => project.language != "C++");
+        let filteredData = data.filter(
+          (project) =>
+            project.language != "C++" && project.topics.includes("project")
+        );
         setProjects(filteredData);
       });
 
@@ -28,7 +31,8 @@ const Projects = () => {
         <ProjectIcon />
       </h1>
       <p className="section-text">
-        All projects were fetched from my{" "}
+        All <span className="highlight">{projects.length}</span> projects are
+        from my{" "}
         <Link
           to="https://github.com/samithseu"
           target="_blank"
@@ -36,13 +40,12 @@ const Projects = () => {
         >
           GitHub
         </Link>
-        .
       </p>
       <div className="projects">
         {projects.length === 0 && (
-          <>
-            <p className="loading">Loading...</p>
-          </>
+          <div className="center">
+            <div className="spinner"></div>
+          </div>
         )}
         {projects.map((project) => (
           <Link
