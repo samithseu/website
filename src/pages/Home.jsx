@@ -5,8 +5,6 @@ import Telegram from "../components/Telegram";
 import Email from "../components/Email";
 import { motion } from "framer-motion";
 import M_Logo from "../components/M_Logo";
-import NuxtLogo from "../components/NuxtLogo";
-import { Link } from "react-router-dom";
 
 function Home() {
   const transition = { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] };
@@ -45,15 +43,7 @@ function Home() {
           variants={variants}
           className="subtext skill"
         >
-          frontend (
-          <Link
-            title="Nuxt.JS, The Intuitive Vue Framework"
-            to="https://nuxt.com/"
-            target="_blank"
-          >
-            <NuxtLogo />
-          </Link>
-          )
+          frontend
         </motion.h2>
 
         {/* social */}

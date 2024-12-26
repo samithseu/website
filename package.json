@@ -1,4 +1,5 @@
 {
+  "proxy": "https://jroch-nuxt.vercel.app/api/certs",
   "name": "website",
   "private": true,
   "version": "0.0.0",

@@ -3,14 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 
 const Header = () => {
-  // links
-  const links = [
-    { id: 1, name: "home", slug: "" },
-    { id: 2, name: "about", slug: "about" },
-    { id: 3, name: "blog", slug: "blog" },
-    { id: 4, name: "projects", slug: "projects" },
-  ];
-
   const [menuClass, setMenuClass] = useState(false);
   const location = useLocation();
 

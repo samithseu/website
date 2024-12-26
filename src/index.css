@@ -59,14 +59,38 @@ video {
   max-width: 100%;
 }
 
-/* To the left */
-.hoverText:has(+ .hoverText:hover) {
-  font-weight: 500;
-  color: rgb(199, 210, 254);
-}
+.not-found-page {
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
 
-.hoverText:has(+ .hoverText + .hoverText:hover) {
-  font-weight: 300;
+  & svg {
+    aspect-ratio: initial;
+    height: 5rem;
+    fill: var(--blue);
+  }
+
+  & a {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--white);
+    transition: 200ms ease-out;
+    &:hover {
+      scale: 1.1;
+    }
+  }
+
+  & .not-found {
+    font-size: 2.2rem;
+    color: var(--blue);
+    font-weight: bold;
+    text-align: center;
+  }
 }
 
 .container {
@@ -82,16 +106,19 @@ video {
   color: var(--blue);
   text-decoration: none;
 }
-
 .subtext.skill {
   color: var(--blue);
   text-decoration: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.15rem;
 
-  & svg {
+  & a {
     width: max-content !important;
+    height: max-content !important;
+  }
+  & svg {
+    width: fit-content !important;
     height: 1.1rem;
     aspect-ratio: initial;
     fill: var(--blue);
@@ -246,7 +273,7 @@ video {
       display: flex;
       list-style: none;
       display: flex;
-      gap: 1.5rem;
+      gap: 1.2rem;
 
       & a {
         color: var(--white);
@@ -391,24 +418,29 @@ video {
   }
 }
 
+.project-count {
+  font-weight: bold;
+}
+
 .project-card {
   text-align: center;
   width: 100%;
-  height: max-content;
+  height: 100%;
   padding: 0.6rem 1.5rem;
   border: 2px solid var(--blue);
   border-radius: 0.5rem;
   text-decoration: none;
   transition: all 300ms ease-out;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-content: center;
+  gap: 1rem;
   filter: blur(0px);
 
   & svg {
     aspect-ratio: initial;
+    height: 1.2rem;
     fill: var(--blue);
-    height: 1.5rem;
   }
 
   & .project-title {
@@ -417,6 +449,13 @@ video {
     display: flex;
     align-items: center;
     color: var(--blue);
+    text-align: left;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
   }
 
   @media screen and (width >= 768px) {

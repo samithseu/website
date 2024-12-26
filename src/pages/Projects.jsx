@@ -29,8 +29,8 @@ const Projects = () => {
     <AnimatedPage className="project-container container">
       <SectionTitle sectionTitle="Projects" icon={<ProjectIcon />} />
       <p className="section-text">
-        All <span className="highlight">{projects.length}</span> projects are
-        from my{" "}
+        All <span className="highlight project-count">{projects.length}</span>{" "}
+        projects are from my{" "}
         <Link
           to="https://github.com/samithseu"
           target="_blank"
@@ -47,6 +47,7 @@ const Projects = () => {
         )}
         {projects.map((project) => (
           <Link
+            title={project.name}
             target="_blank"
             className="project-card"
             to={project.html_url}

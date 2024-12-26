@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Projects from "./pages/Projects";
+import Certificates from "./pages/Certificates";
+import NotFoundPage from "./pages/NotFoundPage";
 import { useEffect } from "react";
 import { motion, useMotionValue } from "framer-motion";
 
@@ -40,6 +42,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/certificates" element={<Certificates />} />
+          <Route exact path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
     </>

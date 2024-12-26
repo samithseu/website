@@ -8,6 +8,7 @@ const Navbar = ({ cName, forMobile }) => {
     { id: 2, name: "about", slug: "about" },
     { id: 3, name: "blog", slug: "blog" },
     { id: 4, name: "projects", slug: "projects" },
+    { id: 5, name: "certificates", slug: "certificates" },
   ];
 
   // animated values
