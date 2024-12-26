@@ -82,6 +82,24 @@ video {
   color: var(--blue);
   text-decoration: none;
 }
+
+.subtext.skill {
+  color: var(--blue);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+
+  & svg {
+    width: max-content !important;
+    height: 1.1rem;
+    aspect-ratio: initial;
+    fill: var(--blue);
+    stroke: var(--blue);
+    cursor: pointer;
+    transition: all 300ms ease-out;
+  }
+}
 .nav-item {
   font-weight: 600;
   text-transform: capitalize;
@@ -93,7 +111,7 @@ video {
 .section-title {
   font-size: 1.4rem;
   text-transform: capitalize;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
   font-weight: bold;
   color: var(--blue);
@@ -366,21 +384,26 @@ video {
   & .loading {
     color: var(--blue);
   }
+  @media screen and (width >= 768px) {
+    &:has(.project-card:hover) .project-card:not(:hover) {
+      filter: blur(3px) brightness(38%);
+    }
+  }
 }
 
 .project-card {
   text-align: center;
   width: 100%;
   height: max-content;
-  padding: 0.5rem 1.5rem;
-  border: 1px solid var(--blue);
+  padding: 0.6rem 1.5rem;
+  border: 2px solid var(--blue);
   border-radius: 0.5rem;
   text-decoration: none;
-  background-color: transparent;
-  transition: all 350ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 300ms ease-out;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  filter: blur(0px);
 
   & svg {
     aspect-ratio: initial;
@@ -396,19 +419,15 @@ video {
     color: var(--blue);
   }
 
-  &:hover {
-    scale: 0.98;
-    background-color: var(--blue);
-  }
-  &:hover .project-title {
-    color: var(--black);
-  }
-  &:hover svg {
-    fill: var(--black);
+  @media screen and (width >= 768px) {
+    &:hover {
+      scale: 1.08;
+    }
   }
 }
 
 .center {
+  /* for aligning the spnner */
   display: flex;
   justify-content: center;
   align-items: center;

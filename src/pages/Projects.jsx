@@ -3,6 +3,7 @@ import ProjectIcon from "../components/ProjectIcon";
 import GitHub from "../components/GitHub";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import SectionTitle from "../components/SectionTitle";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -26,10 +27,7 @@ const Projects = () => {
 
   return (
     <AnimatedPage className="project-container container">
-      <h1 className="section-title">
-        Projects
-        <ProjectIcon />
-      </h1>
+      <SectionTitle sectionTitle="Projects" icon={<ProjectIcon />} />
       <p className="section-text">
         All <span className="highlight">{projects.length}</span> projects are
         from my{" "}

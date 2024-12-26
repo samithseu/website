@@ -1,5 +1,6 @@
 import AnimatedPage from "../components/AnimatedPage";
 import AboutIcon from "../components/AboutIcon";
+import SectionTitle from "../components/SectionTitle";
 
 const About = () => {
   let today = new Date();
@@ -9,12 +10,9 @@ const About = () => {
   return (
     <>
       <AnimatedPage className="about-container container">
-        <h1 className="section-title">
-          about
-          <AboutIcon />
-        </h1>
+        <SectionTitle sectionTitle="About" icon={<AboutIcon />} />
         <p>
-          My name is <span className="highlight">Samith Seu </span>, a{" "}
+          My name is <span className="highlight">Samith Seu</span>, a{" "}
           <span className="highlight">{age}</span> year-old IT student, studying
           in IT major at{" "}
           <a
