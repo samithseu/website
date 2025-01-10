@@ -6,12 +6,13 @@ import Blog from "./pages/Blog";
 import Projects from "./pages/Projects";
 import Certificates from "./pages/Certificates";
 import NotFoundPage from "./pages/NotFoundPage";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, useMotionValue } from "framer-motion";
 
 function App() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -19,22 +20,30 @@ function App() {
       mouseY.set(event.clientY);
     };
 
-    // Add event listener for mouse movement
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Add event listener for mouse movement and resize
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       // Cleanup the event listener on unmount
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("resize", handleResize);
     };
   }, [mouseX, mouseY]);
 
   return (
     <>
-      <motion.div
-        className="shape"
-        style={{ x: mouseX, y: mouseY, translate: "-50% -50%" }}
-        transition={{ type: "smooth" }}
-      ></motion.div>
+      {windowWidth > 768 && (
+        <motion.div
+          className="shape"
+          style={{ x: mouseX, y: mouseY, translate: "-50% -50%" }}
+          transition={{ type: "smooth" }}
+        ></motion.div>
+      )}
       <Header />
       <main>
         <Routes>
