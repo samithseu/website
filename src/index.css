@@ -147,6 +147,7 @@ video {
   gap: 0.8rem;
 
   & svg {
+    aspect-ratio: initial;
     height: 1.5rem;
     fill: var(--blue);
   }
