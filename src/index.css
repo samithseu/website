@@ -71,7 +71,7 @@ video {
   & svg {
     aspect-ratio: initial;
     height: 5rem;
-    fill: var(--blue);
+    color: var(--blue);
   }
 
   & a {
@@ -121,8 +121,7 @@ video {
     width: fit-content !important;
     height: 1.1rem;
     aspect-ratio: initial;
-    fill: var(--blue);
-    stroke: var(--blue);
+    color: var(--blue);
     cursor: pointer;
     transition: all 300ms ease-out;
   }
@@ -149,7 +148,7 @@ video {
   & svg {
     aspect-ratio: initial;
     height: 1.5rem;
-    fill: var(--blue);
+    color: var(--blue);
   }
 }
 .section-text {
@@ -348,12 +347,15 @@ video {
 
       & svg {
         aspect-ratio: initial;
-        height: 1.6rem;
-        fill: white;
-        transition: 200ms ease-out;
+        height: 1.8rem;
+        color: var(--white);
+        transition: all 250ms ease-out;
 
-        &:hover {
-          fill: var(--blue);
+        @media screen and (width > 768px) {
+          &:hover {
+            color: var(--blue);
+            scale: 1.2;
+          }
         }
       }
 
@@ -441,7 +443,7 @@ video {
   & svg {
     aspect-ratio: initial;
     height: 1.2rem;
-    fill: var(--blue);
+    color: var(--blue);
   }
 
   & .project-title {

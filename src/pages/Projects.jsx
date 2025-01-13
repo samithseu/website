@@ -9,6 +9,8 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
   // fetch projects from github api
   useEffect(() => {
+    // changing page title
+    document.title = "Samith Seu - Projects";
     fetch("https://api.github.com/users/samithseu/repos")
       .then((response) => response.json())
       .then((data) => {

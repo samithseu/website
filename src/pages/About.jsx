@@ -1,11 +1,21 @@
 import AnimatedPage from "../components/AnimatedPage";
 import AboutIcon from "../components/AboutIcon";
 import SectionTitle from "../components/SectionTitle";
+import { useEffect } from "react";
 
 const About = () => {
   let today = new Date();
-  let birthday = new Date(2002, 6, 14);
-  let age = today.getFullYear() - birthday.getFullYear();
+  let birthday = new Date("2002-07-14");
+  const diffInMS = today - birthday;
+
+  // Convert milliseconds to years
+  const MSInYear = 1000 * 60 * 60 * 24 * 365.25;
+  const age = Math.floor(Math.abs(diffInMS / MSInYear));
+
+  // changing page title
+  useEffect(() => {
+    document.title = "Samith Seu - About";
+  }, []);
 
   return (
     <>
@@ -13,24 +23,19 @@ const About = () => {
         <SectionTitle sectionTitle="About" icon={<AboutIcon />} />
         <p>
           My name is <span className="highlight">Samith Seu</span>, a{" "}
-          <span className="highlight">{age}</span> year-old IT student, studying
-          in IT major at{" "}
+          <span className="highlight">{age}</span> year-old IT fresh graduate,
+          was studying in IT major at{" "}
           <a
             target="_blank"
             href="https://www.facebook.com/brachnasastraBTI"
             className="highlight"
           >
             BTI
-          </a>{" "}
-          which currently in
-          <span className="highlight">
-            {" "}
-            4<sup>th</sup>{" "}
-          </span>{" "}
-          year. Even coding is hard for me, I'm still trying to learn and
-          practise more since 2020 because the quarantine make me want to learn
-          more about the computer. As a passionate frontend developer, I thrive
-          on crafting intuitive and visually compelling user experiences. With a
+          </a>
+          . Even coding is hard for me, I'm still trying to learn and practise
+          more since 2020 because the quarantine make me want to learn more
+          about the computer. As a passionate frontend developer, I thrive on
+          crafting intuitive and visually compelling user experiences. With a
           strong <span className="highlight"> foundation</span> in modern web
           technologies like <span className="highlight">HTML, CSS</span> and{" "}
           <span className="highlight">JavaScript</span>, I specialize in

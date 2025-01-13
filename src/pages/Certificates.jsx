@@ -8,6 +8,8 @@ const Certificates = () => {
   const [Certificates, setCertificates] = useState([]);
   // fetch Certificates from notion api
   useEffect(() => {
+    // changing page title
+    document.title = "Samith Seu - Certificates";
     fetch("https://jroch-nuxt.vercel.app/api/certs")
       .then((response) => response.json())
       .then((data) => {
