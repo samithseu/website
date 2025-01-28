@@ -13,6 +13,9 @@ const Certificates = () => {
   } = useQuery({
     queryKey: ["certificates"],
     queryFn: fetchCertificates,
+    refetchOnMount: true,
+    refetchOnWindowFocus: true,
+    staleTime: 1000 * 60, // 60 seconds
   });
 
   return (

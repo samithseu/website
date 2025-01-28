@@ -14,6 +14,9 @@ const Projects = () => {
   } = useQuery({
     queryKey: ["projects"],
     queryFn: fetchProjects,
+    refetchOnMount: true,
+    refetchOnWindowFocus: true,
+    staleTime: 1000 * 60, // 60 seconds
   });
 
   return (
