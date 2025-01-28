@@ -58,6 +58,10 @@ video {
   display: block;
   max-width: 100%;
 }
+.error-text {
+  color: red !important;
+  font-weight: 600 !important;
+}
 
 .not-found-page {
   width: 100%;

@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-const transition = { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] };
+const transition = { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] };
 const variants = {
-  hidden: { filter: "blur(12px)", transform: "translateY(30%)", opacity: 0 },
+  hidden: { filter: "blur(12px)", transform: "translateY(20%)", opacity: 0 },
   visible: { filter: "blur(0)", transform: "translateY(0)", opacity: 1 },
 };
 

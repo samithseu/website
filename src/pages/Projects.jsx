@@ -1,37 +1,26 @@
 import AnimatedPage from "../components/AnimatedPage";
 import ProjectIcon from "../components/ProjectIcon";
 import GitHub from "../components/GitHub";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SectionTitle from "../components/SectionTitle";
+import { useQuery } from "@tanstack/react-query";
+import { fetchProjects } from "../api/FetchData";
 
 const Projects = () => {
-  const [projects, setProjects] = useState([]);
-  // fetch projects from github api
-  useEffect(() => {
-    // changing page title
-    document.title = "Samith Seu - Projects";
-    fetch("https://api.github.com/users/samithseu/repos")
-      .then((response) => response.json())
-      .then((data) => {
-        let filteredData = data.filter(
-          (project) =>
-            project.language != "C++" && project.topics.includes("project")
-        );
-        setProjects(filteredData);
-      });
-
-    // clean up function
-    return () => {
-      setProjects([]);
-    };
-  }, []);
+  const {
+    data: projects,
+    isPending,
+    error,
+  } = useQuery({
+    queryKey: ["projects"],
+    queryFn: fetchProjects,
+  });
 
   return (
     <AnimatedPage className="project-container container">
       <SectionTitle sectionTitle="Projects" icon={<ProjectIcon />} />
       <p className="section-text">
-        All <span className="highlight project-count">{projects.length}</span>{" "}
+        All <span className="highlight project-count">{projects?.length}</span>{" "}
         projects are from my{" "}
         <Link
           to="https://github.com/samithseu"
@@ -42,23 +31,25 @@ const Projects = () => {
         </Link>
       </p>
       <div className="projects">
-        {projects.length === 0 && (
+        {isPending && (
           <div className="center">
             <div className="spinner"></div>
           </div>
         )}
-        {projects.map((project) => (
-          <Link
-            title={project.name}
-            target="_blank"
-            className="project-card"
-            to={project.html_url}
-            key={project.id}
-          >
-            <GitHub />
-            <h2 className="project-title">{project.name}</h2>
-          </Link>
-        ))}
+        {error && <p className="error-text">Error: {error.message}</p>}
+        {!isPending &&
+          projects?.map((project) => (
+            <Link
+              title={project.name}
+              target="_blank"
+              className="project-card"
+              to={project.html_url}
+              key={project.id}
+            >
+              <GitHub />
+              <h2 className="project-title">{project.name}</h2>
+            </Link>
+          ))}
       </div>
     </AnimatedPage>
   );
