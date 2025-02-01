@@ -59,6 +59,7 @@ function Home() {
           className="social"
         >
           <a
+            title="GitHub"
             target="_blank"
             href="https://github.com/samithseu"
             aria-label="Click this link to checkout Samith's Github"
@@ -66,6 +67,7 @@ function Home() {
             <GitHub />
           </a>
           <a
+            title="Twitter/X"
             target="_blank"
             href="https://twitter.com/seumith"
             aria-label="Click this link to checkout Samith's Twitter/X"
@@ -73,6 +75,7 @@ function Home() {
             <Twitter />
           </a>
           <a
+            title="LinkedIn"
             target="_blank"
             href="https://www.linkedin.com/in/samith-seu-500193205/"
             aria-label="Click this link to checkout Samith's Linkedin profile"
@@ -80,6 +83,7 @@ function Home() {
             <Linkedin />
           </a>
           <a
+            title="Telegram"
             target="_blank"
             href="https://t.me/samithseu"
             aria-label="Click this link to checkout Samith's Telegram"
@@ -87,6 +91,7 @@ function Home() {
             <Telegram />
           </a>
           <a
+            title="E-mail"
             href="mailto:seusamith@gmail.com"
             aria-label="Click this link to checkout Samith's Email"
           >
