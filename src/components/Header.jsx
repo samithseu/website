@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
+import MenuIcon from "./MenuIcon";
 
 const Header = () => {
   const [menuClass, setMenuClass] = useState(false);
@@ -48,16 +49,16 @@ const Header = () => {
           </Link>
           {/* nav-links */}
           <Navbar forMobile={menuClass} cName={"nav-link"} />
+
           {/* burger menu */}
           <div
             data-show-menu={menuClass}
-            onClick={handleClickMenu}
             className="burger-menu"
+            onClick={handleClickMenu}
           >
-            <span></span>
-            <span></span>
-            <span></span>
+            <MenuIcon menuState={menuClass} />
           </div>
+
           {/* nav-links for mobile*/}
           {menuClass && (
             <Navbar
