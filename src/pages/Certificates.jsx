@@ -24,7 +24,17 @@ const Certificates = () => {
       <p className="section-text">
         All{" "}
         <span className="highlight project-count">{Certificates?.length}</span>{" "}
-        certificates are from my <span className="highlight">Notion API</span>
+        certificates are from the{" "}
+        <span className="highlight">
+          college{" "}
+          <Link
+            target="_blank"
+            to="https://www.facebook.com/brachnasastraBTI"
+            className="highlight"
+          >
+            (BTI)
+          </Link>
+        </span>
       </p>
       <div className="projects">
         {isPending && (

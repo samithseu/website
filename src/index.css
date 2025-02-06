@@ -100,7 +100,8 @@ video {
 .container {
   max-width: 56rem;
   margin-inline: auto;
-  padding-block: 6rem;
+  padding-block-start: 8rem;
+  padding-block-end: 6rem;
   padding-inline: 1.5rem;
 }
 .hidden {
@@ -181,6 +182,12 @@ video {
 
 .header-container {
   /* small screen default style */
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: rgba(255, 255, 255, 0.035);
+  box-shadow: 0px -1px 0px 0.5px rgba(255, 255, 255, 0.25);
+  border-radius: 0.8rem;
+  margin-top: 1.5rem;
+  /* new styles */
   padding: 1.5rem;
   display: flex;
   justify-content: space-between;
@@ -211,20 +218,21 @@ video {
   & ul.nav-link-mobile {
     --padding-top: 2.5rem;
     position: absolute;
-    top: calc(2rem + var(--padding-top));
-    right: calc(0% + 1.5rem);
-    width: 10rem;
+    top: calc(2.8rem + var(--padding-top));
+    right: calc(1%);
+    width: max-content;
     height: max-content;
     border-radius: 0.5rem;
     background-color: var(--black);
     backdrop-filter: blur(10px) brightness(1);
-    border: 1px solid var(--white-low);
-    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0px -1px 0px 0.5px rgba(255, 255, 255, 0.2);
+    padding: 2rem;
     list-style: none;
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 1rem;
+    gap: 1.5rem;
 
     & a {
       font-size: 1.2rem;
@@ -250,6 +258,23 @@ video {
     align-items: center;
     justify-content: space-evenly;
     cursor: pointer;
+
+    &[data-show-menu="true"] {
+      & span:nth-child(1) {
+        transform: translateX(10%) rotate(45deg);
+        transform-origin: top left;
+      }
+
+      & span:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+      }
+
+      & span:nth-child(3) {
+        transform: translateX(2.5%) translateY(100%) rotate(-45deg);
+        transform-origin: top left;
+      }
+    }
 
     &:hover > span {
       background-color: var(--blue);
@@ -422,6 +447,10 @@ video {
     &:has(.project-card:hover) .project-card:not(:hover) {
       filter: blur(3px) brightness(38%);
     }
+    & .project-card:hover {
+      border: 1px solid var(--blue);
+      box-shadow: 0px -1px 0px 0.5px var(--blue);
+    }
   }
 }
 
@@ -434,7 +463,9 @@ video {
   width: 100%;
   height: 100%;
   padding: 0.6rem 1.5rem;
-  border: 2px solid var(--blue);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #090909;
+  box-shadow: 0px -1px 0px 0.5px rgba(255, 255, 255, 0.2);
   border-radius: 0.5rem;
   text-decoration: none;
   transition: all 300ms ease-out;
@@ -442,7 +473,7 @@ video {
   grid-template-columns: max-content 1fr;
   align-content: center;
   gap: 1rem;
-  filter: blur(0px);
+  z-index: 90;
 
   & svg {
     aspect-ratio: initial;
@@ -455,7 +486,7 @@ video {
     font-weight: 600;
     display: flex;
     align-items: center;
-    color: var(--blue);
+    color: var(--white);
     text-align: left;
 
     overflow: hidden;

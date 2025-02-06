@@ -2,6 +2,7 @@ import AnimatedPage from "../components/AnimatedPage";
 import AboutIcon from "../components/AboutIcon";
 import SectionTitle from "../components/SectionTitle";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const About = () => {
   let today = new Date();
@@ -25,13 +26,13 @@ const About = () => {
           My name is <span className="highlight">Samith Seu</span>, a{" "}
           <span className="highlight">{age}</span> year-old IT fresh graduate,
           was studying in IT major at{" "}
-          <a
+          <Link
             target="_blank"
-            href="https://www.facebook.com/brachnasastraBTI"
+            to="https://www.facebook.com/brachnasastraBTI"
             className="highlight"
           >
             BTI
-          </a>
+          </Link>
           . Even coding is hard for me, I'm still trying to learn and practise
           more since 2020 because the quarantine make me want to learn more
           about the computer. As a passionate frontend developer, I thrive on

@@ -6,6 +6,21 @@ const Header = () => {
   const [menuClass, setMenuClass] = useState(false);
   const location = useLocation();
 
+  // handle outside click
+  const handleOutsideClick = (event) => {
+    if (menuClass && event.target instanceof HTMLElement) {
+      if (!event.target.closest(".burger-menu")) {
+        setMenuClass(false);
+      }
+    }
+  };
+  useEffect(() => {
+    document.addEventListener("click", handleOutsideClick);
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, [menuClass]);
+
   // handle click on burger menu
   function handleClickMenu() {
     setMenuClass((menuClass) => !menuClass);
@@ -34,14 +49,22 @@ const Header = () => {
           {/* nav-links */}
           <Navbar forMobile={menuClass} cName={"nav-link"} />
           {/* burger menu */}
-          <div onClick={handleClickMenu} className="burger-menu">
+          <div
+            data-show-menu={menuClass}
+            onClick={handleClickMenu}
+            className="burger-menu"
+          >
             <span></span>
             <span></span>
             <span></span>
           </div>
           {/* nav-links for mobile*/}
           {menuClass && (
-            <Navbar forMobile={menuClass} cName={"nav-link-mobile"} />
+            <Navbar
+              onclick={handleOutsideClick}
+              forMobile={menuClass}
+              cName={"nav-link-mobile"}
+            />
           )}
         </nav>
       </header>
