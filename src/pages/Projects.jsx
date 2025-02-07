@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import AnimatedPage from "../components/AnimatedPage";
 import ProjectIcon from "../components/ProjectIcon";
 import GitHub from "../components/GitHub";
@@ -7,6 +8,12 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchProjects } from "../api/FetchData";
 
 const Projects = () => {
+  // change the website title
+  useEffect(() => {
+    document.title = "Samith Seu - Projects";
+  }, []);
+
+  // fetch the projects from github API
   const {
     data: projects,
     isPending,

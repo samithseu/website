@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import AnimatedPage from "../components/AnimatedPage";
 import AwardIcon from "../components/AwardIcon";
 import { Link } from "react-router-dom";
@@ -6,6 +7,12 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchCertificates } from "../api/FetchData";
 
 const Certificates = () => {
+  // change the website title
+  useEffect(() => {
+    document.title = "Samith Seu - Certificates";
+  }, []);
+
+  // fetch the certificates from notion API
   const {
     data: Certificates,
     isPending,
