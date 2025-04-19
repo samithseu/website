@@ -31,14 +31,7 @@ const Projects = () => {
       <SectionTitle sectionTitle="Projects" icon={<ProjectIcon />} />
       <p className="section-text">
         All <span className="highlight project-count">{projects?.length}</span>{" "}
-        projects are from my{" "}
-        <Link
-          to="https://github.com/samithseu"
-          target="_blank"
-          className="highlight"
-        >
-          GitHub
-        </Link>
+        projects are previewable!
       </p>
       <div className="projects">
         {isPending && (
