@@ -53,7 +53,7 @@ const Projects = () => {
               title={project.name}
               target="_blank"
               className="project-card"
-              to={project.html_url}
+              to={project.homepage}
               key={project.id}
             >
               <GitHub />
