@@ -33,10 +33,10 @@ const About = () => {
           >
             BTI
           </Link>
-          . Even coding is hard for me, I'm still trying to learn and practise
-          more since 2020 because the quarantine make me want to learn more
-          about the computer. As a passionate frontend developer, I thrive on
-          crafting intuitive and visually compelling user experiences. With a
+          . Even coding is hard for me, I&apos;m still trying to learn and
+          practise more since 2020 because the quarantine make me want to learn
+          more about the computer. As a passionate frontend developer, I thrive
+          on crafting intuitive and visually compelling user experiences. With a
           strong <span className="highlight"> foundation</span> in modern web
           technologies like <span className="highlight">HTML, CSS</span> and{" "}
           <span className="highlight">JavaScript</span>, I specialize in
