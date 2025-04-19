@@ -412,13 +412,11 @@ video {
     color: var(--blue);
   }
   @media screen and (width >= 768px) {
-    &:has(.project-card:hover) .project-card:not(:hover),
-    &:has(.project-card:focus-within) .project-card:not(:focus-within) {
+    &:has(.project-card:hover) .project-card:not(:hover) {
       filter: blur(3px) brightness(38%);
     }
     & .project-card {
-      &:hover,
-      &:focus-within {
+      &:hover {
         border: 1px solid var(--blue);
         outline: none;
         box-shadow: 0px -1px 0px 0.5px var(--blue);
@@ -471,8 +469,7 @@ video {
   }
 
   @media screen and (width >= 768px) {
-    &:hover,
-    &:focus-within {
+    &:hover {
       scale: 1.08;
     }
   }
