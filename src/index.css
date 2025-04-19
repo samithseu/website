@@ -1,13 +1,7 @@
 @font-face {
-  font-family: "Inter", sans-serif;
-  font-weight: bold;
-  src: url("./fonts/Inter_18pt-Bold.ttf");
-}
-
-@font-face {
-  font-family: "Inter", sans-serif;
-  font-weight: normal;
-  src: url("./fonts/Inter_18pt-Regular.ttf");
+  font-family: "JetBrainsMono", monospace;
+  font-weight: 100 800;
+  src: url("./fonts/JetBrainsMonoWeight.ttf");
 }
 
 /* RESET CSS */
@@ -44,7 +38,7 @@ h6 {
 }
 html {
   font-size: 16px;
-  font-family: "Inter", sans-serif;
+  font-family: "JetBrainsMono", monospace;
   color-scheme: only dark;
 }
 body {
